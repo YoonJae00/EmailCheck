@@ -1,0 +1,27 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: realyoon77@gmail.com
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: true
+          timeout: 25000
+          starttls:
+            enable: true
+        protocol: smtp
+  datasource:
+    dirver-class-name: com.mysql.cj.jdbc.Driver
+    url :  jdbc:mysql://localhost:3306/menudb
+    username: ohgiraffers
+    password: ohgiraffers
+    servlet:
+      multipart:
+        max-file-size: 100MB
+        max-request-size: 500MB
+    mvc:
+      static-path-pattern: /static/**
+mybatis:
+  mapper-locations: mapper/**/*.xml

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ohgiraffers.funcemailcheck.EmailMapper">
+    <resultMap id="registResultMap" type="com.ohgiraffers.funcemailcheck.USERDTO">
+        <id property="userId" column="user_id"/>
+        <result property="userPwd" column="user_pwd"/>
+        <result property="userCheck" column="user_check"/>
+        <result property="userAuth" column="user_auth"/>
+    </resultMap>
+
+    <insert id="regist" parameterType="com.ohgiraffers.funcemailcheck.USERDTO">
+        INSERT INTO tbl_userinfo ( user_id, user_pwd, user_check, user_auth )
+        VALUES ( #{userId}, #{userPwd}, #{userCheck}, #{userAuth} )
+    </insert>
+</mapper>
